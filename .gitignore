@@ -1,0 +1,25 @@
+# --- Node.js / Express ---
+dist/
+build/
+*.log
+backend/node_modules
+backend/schema.js
+
+# --- Vite / React frontend ---
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/.env*
+
+# --- macOS/Linux/System ---
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.tmp
+DOCS/
+
+# --- IDEs ---
+.vscode/
+.idea/
+*.code-workspace
