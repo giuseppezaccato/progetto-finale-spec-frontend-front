@@ -73,14 +73,14 @@ export default function Compara() {
     return (
         <>
 
-            <div className="d-flex align-items-center text-center ">
+            <div className="d-flex justify-content-center align-items-center text-center ">
+                <span className="h4 fw-bold mb-0">Smartphone Battle</span>
                 <img
                     src="/battle.jpeg"
                     alt="logo"
-                    className="me-3"
+                    className="me-3 "
                     style={{ width: "200px" }}
                 />
-                <span className="h4 fw-bold mb-0">Smartphone Battle</span>
             </div>
 
 
@@ -130,11 +130,15 @@ export default function Compara() {
                                     <th>Caratteristica</th>
                                     {compareList.map(phone => (
                                         <th key={phone.id} className="position-relative">
-                                            <div className="d-flex justify-content-between align-items-center">
-                                                <span>{phone.title}</span>
+                                            <div className="d-flex justify-content-around align-items-center">
+                                                <img src={phone.image}
+                                                    alt={phone.title}
+                                                    style={{ maxHeight: "80px" }}
+                                                    className="m-3" />
+                                                <p>{phone.title}</p>
                                                 <button
                                                     onClick={() => removeFromCompare(phone.id)}
-                                                    className="btn btn-sm btn-danger ms-2"
+                                                    className="btn btn-sm btn-danger ms-4"
                                                     title="Rimuovi"
                                                 >
                                                     &times;
