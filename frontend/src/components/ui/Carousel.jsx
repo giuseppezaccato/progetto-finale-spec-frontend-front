@@ -8,7 +8,7 @@ const CarouselSwiper = React.memo(({ images }) => {
     return (
         <div style={{
             minHeight: '700px', // altezza minima
-            padding: '40px'
+            padding: '10px'
         }}>
             <div style={{ width: '90%', maxWidth: '800px' }}>
                 <Swiper
@@ -36,7 +36,6 @@ const CarouselSwiper = React.memo(({ images }) => {
                                         objectFit: 'contain',
                                         borderRadius: '10px',
                                         boxShadow: '0 4px 8px rgba(26, 21, 21, 0.2)',
-                                        backgroundColor: '#fff',
                                         cursor: 'grab'
                                     }}
                                 />

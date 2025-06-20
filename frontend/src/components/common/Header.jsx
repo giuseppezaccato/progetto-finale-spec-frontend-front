@@ -15,7 +15,7 @@ export default function Header() {
             <nav className="navbar navbar-expand-md bg-info">
                 <div className="container">
                     <NavLink className="navbar-brand" to="/">
-                        <img style={{ height: "80px" }} src="/benchSmart.svg" alt="logo" />
+                        <img style={{ height: "80px" }} src="/benchSmart.png" alt="logo" />
                         BenchSmart
                     </NavLink>
 

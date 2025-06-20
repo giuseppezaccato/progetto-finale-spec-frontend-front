@@ -2,7 +2,7 @@ export type Smartphone = {
     id: number,
     title: string,
     slug: string,
-    category: "Flagship" | "Mid-range" | "Budget",
+    category: "Flagship" | "Mid-range" | "Budget" | "Premium"
     brand: string,
     price: number,
     display: string,
