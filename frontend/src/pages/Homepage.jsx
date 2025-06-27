@@ -20,7 +20,8 @@ const Homepage = () => {
                 //  fetch multiple in parallelo per ogni dettaglio e salvo solo quello che mi serve(l'immagine principalmente e il titolo)
                 const detailedResponses = await Promise.all(
                     ids.map(id =>
-                        fetch(`${URL}/smartphones/${id}`).then(res => res.json())
+                        fetch(`${URL}/smartphones/${id}`)
+                            .then(res => res.json())
                             .then(data => ({ id: data.smartphone.id, image: data.smartphone.image, title: data.smartphone.title }))
                     )
                 );

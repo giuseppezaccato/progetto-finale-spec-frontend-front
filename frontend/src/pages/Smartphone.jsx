@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import SmartphoneCard from "../components/smartphone/SmartphoneCard";
 import Loader from "../components/common/Loader";
 
@@ -20,7 +20,7 @@ export default function Smartphone() {
     }, [id]);
 
     return (
-        <div>
+        <div >
             {smartphone ? (
                 <>
                     <SmartphoneCard smartphone={smartphone} />
@@ -28,6 +28,7 @@ export default function Smartphone() {
             ) : (
                 <Loader />
             )}
+
         </div>
     );
 }

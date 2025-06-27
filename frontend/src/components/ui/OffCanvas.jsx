@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useFavourites } from "../../context/FavContext";
 
 const FavOffCanvas = ({ show, onClose }) => {
@@ -5,7 +6,7 @@ const FavOffCanvas = ({ show, onClose }) => {
 
     return (
         <div
-            className={`offcanvas offcanvas-end${show ? " show" : ""}`}
+            className={`offcanvas offcanvas-end custom-offcanvas ${show ? " show" : ""}`}
             tabIndex="-1"
         >
             <div className="offcanvas-header">
@@ -22,7 +23,7 @@ const FavOffCanvas = ({ show, onClose }) => {
                                 key={fav.id}
                                 className="list-group-item d-flex justify-content-between align-items-center"
                             >
-                                <strong>{fav.title}</strong>
+                                <Link to={`/smartphone/${fav.id}`} > <strong>{fav.title}</strong> </Link>
                                 <button
                                     className="btn btn-sm btn-outline-danger"
                                     onClick={() => removeFavourite(fav.id)}
@@ -34,7 +35,7 @@ const FavOffCanvas = ({ show, onClose }) => {
                     </ul>
                 )}
             </div>
-        </div>
+        </div >
     );
 };
 

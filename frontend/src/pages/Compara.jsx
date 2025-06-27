@@ -5,6 +5,7 @@ import {
 } from "react";
 // import { debounce } from "lodash"; //fix => customHook
 import { useSmartphoneSearch } from "../hooks/useSmartphoneSearch";
+import FavButton from "../components/ui/FavButton";
 
 const URL = import.meta.env.VITE_BASE_URL;
 
@@ -45,7 +46,8 @@ export default function Compara() {
     // }, [debouncedQuery, allSmartphones]);
 
     const addToCompare = async (smartphoneBase) => {
-        if (compareList.find(p => p.id === smartphoneBase.id)) return;
+        if (compareList.find(p => p.id === smartphoneBase.id))
+            return;
         if (compareList.length >= 4) {
             alert("Puoi confrontare al massimo 4 smartphone.")
             // setSearchQuery("") //fix =>  customHook
@@ -143,6 +145,7 @@ export default function Compara() {
                                                 >
                                                     &times;
                                                 </button>
+                                                <FavButton smartphone={phone} />
                                             </div>
                                         </th>
                                     ))}

@@ -2,21 +2,30 @@
 import { useFavourites } from '../../context/FavContext'
 
 export default function FavButton({ smartphone }) {
-    const { addFavourite, setShowOffCanvas } = useFavourites()
+    const { addFavourite, removeFavourite, favourites, setShowOffCanvas } = useFavourites()
+
+
+    const isFav = favourites.some(f => f.id === smartphone.id);
 
     const handleClick = () => {
-        addFavourite(smartphone.smartphone);
-        setShowOffCanvas(true);
+        if (isFav) {
+            removeFavourite(smartphone.id);
+            setShowOffCanvas(false);
+
+        } else {
+            addFavourite(smartphone);
+            setShowOffCanvas(true);
+        }
+        console.log(smartphone)
     }
 
     return (
         <button
             onClick={handleClick}
-            className="btn rounded btn-outline-info "
-        // disabled={!smartphone.smartphone?.id}
+            className="btn rounded btn-outline-info p-2 mx-2"
+            disabled={!smartphone?.id}
         >
-            Aggiungi ai Preferiti
+            {isFav ? "★Rimuovi dai Preferiti" : "☆Aggiungi ai Preferiti"}
         </button>
-
     )
 }

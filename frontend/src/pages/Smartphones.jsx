@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSmartphoneSearch } from "../hooks/useSmartphoneSearch";
 import { useState, useMemo } from "react";
 import FavButton from "../components/ui/FavButton";
+// import FavButton from "../components/ui/FavButton";
 
 //* funzione di supporto (oppure importa lodash)
 // function standardDebounce(callback, delay) {
@@ -193,17 +194,25 @@ export default function Smartphones() {
                 {/* // {filteredProducts.map(product => (//fix => customHook */}
                 {/* {filteredResults.map(product => ( //fix => implementazione dell'ordinamento sortBy/sortOrder */}
                 {organizedResults.map(product => (
-                    <Link
-                        to={`/smartphone/${product.id}`}
+                    <div
                         key={product.id}
-                        className="list-group-item list-group-item-action"
+                        className="list-group-item list-group-item-action w-100"
                     >
-                        <div className="d-flex w-100 justify-content-between">
-                            <h5 className="mb-1">{product.title}</h5>
-                            <small className="text-muted">{product.category}</small>
-                            {/* <FavButton smartphone={product} /> //! NON FUNZIONA dovremmo fare una chiamta a parte(magari nel globalContext) */}
+                        <div className="row align-items-center">
+                            {/* Colonna: Titolo + Link */}
+                            <div className="col-12 col-md-8">
+                                <Link to={`/smartphone/${product.id}`} className="text-decoration-none">
+                                    <h5 className="mb-1">{product.title}</h5>
+                                </Link>
+                                <small className="text-muted">{product.category}</small>
+                            </div>
+
+                            {/* Colonna: Bottone preferiti, sempre allineato a destra */}
+                            <div className="col-12 col-md-4 text-md-end mt-2 mt-md-0">
+                                <FavButton smartphone={product} />
+                            </div>
                         </div>
-                    </Link>
+                    </div>
                 ))}
             </div>
 

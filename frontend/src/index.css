@@ -510,3 +510,20 @@ img {
     background-color: #f9f9f9;
   }
 }
+
+.custom-offcanvas {
+  width: 400px !important;
+  /* default */
+}
+
+@media (max-width: 576px) {
+  .custom-offcanvas {
+    width: 280px !important;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .custom-offcanvas {
+    width: 300px !important;
+  }
+}

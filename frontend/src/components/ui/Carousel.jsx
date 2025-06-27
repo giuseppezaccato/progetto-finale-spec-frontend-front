@@ -6,10 +6,8 @@ import React from 'react';
 
 const CarouselSwiper = React.memo(({ images }) => {
     return (
-        <div style={{
-            minHeight: '700px', // altezza minima
-            padding: '10px'
-        }}>
+        <div
+            className='d-flex p-5 justify-content-center align-item-start' >
             <div style={{ width: '90%', maxWidth: '800px' }}>
                 <Swiper
                     modules={[Autoplay]}

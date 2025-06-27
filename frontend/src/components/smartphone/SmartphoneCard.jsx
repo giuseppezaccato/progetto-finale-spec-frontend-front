@@ -1,6 +1,7 @@
 import React from 'react';
 import FavButton from '../ui/FavButton';
 import Loader from '../common/Loader';
+import HomeButton from '../ui/HomeButton';
 
 
 const SmartphoneCard = React.memo(({ smartphone }) => {
@@ -20,7 +21,7 @@ const SmartphoneCard = React.memo(({ smartphone }) => {
 
             {/* Titolo */}
             <h3 className="text-xl font-bold text-gray-800 mb-3">{phone.title}</h3>
-            <FavButton smartphone={smartphone} />
+            <HomeButton />
 
             {/* Caratteristiche tecniche */}
             <div className="text-gray-600 text-sm w-full text-center">
@@ -38,6 +39,7 @@ const SmartphoneCard = React.memo(({ smartphone }) => {
             {/* Prezzo */}
             <div className="mt-3 w-full">
                 <span className="text-2xl font-bold text-blue-600"><strong>{phone.price} €</strong></span>
+                <FavButton smartphone={phone} />
             </div>
 
         </div>
