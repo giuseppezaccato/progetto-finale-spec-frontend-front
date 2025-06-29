@@ -3,6 +3,8 @@ import FavButton from '../ui/FavButton';
 import Loader from '../common/Loader';
 import HomeButton from '../ui/HomeButton';
 
+const URL = import.meta.env.VITE_BASE_URL
+
 
 const SmartphoneCard = React.memo(({ smartphone }) => {
 
@@ -11,10 +13,10 @@ const SmartphoneCard = React.memo(({ smartphone }) => {
     if (!smartphone) return <Loader />;
 
     return (
-        <div className="bg-white rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-xl p-4 text-center">
+        <div className=" p-4 text-center">
             {/* Immagine */}
             <img
-                src={phone.image}
+                src={`${URL}/images/${phone.image}`}
                 alt={phone.title}
                 className="w-60 h-60 object-contain rounded-md mb-4 flex-shrink-0"
             />

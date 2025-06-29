@@ -22,7 +22,7 @@ const Homepage = () => {
                     ids.map(id =>
                         fetch(`${URL}/smartphones/${id}`)
                             .then(res => res.json())
-                            .then(data => ({ id: data.smartphone.id, image: data.smartphone.image, title: data.smartphone.title }))
+                            .then(data => ({ id: data.smartphone.id, image: `${URL}/images/${data.smartphone.image}`, title: data.smartphone.title }))
                     )
                 );
                 setImages(detailedResponses);

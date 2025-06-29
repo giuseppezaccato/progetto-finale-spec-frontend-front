@@ -134,7 +134,7 @@ export default function Compara() {
                                     {compareList.map(phone => (
                                         <th key={phone.id} className="position-relative">
                                             <div className="d-flex justify-content-around align-items-center">
-                                                <img src={phone.image}
+                                                <img src={`${URL}/images/${phone.image}`}
                                                     alt={phone.title}
                                                     style={{ maxHeight: "80px" }}
                                                     className="m-3" />

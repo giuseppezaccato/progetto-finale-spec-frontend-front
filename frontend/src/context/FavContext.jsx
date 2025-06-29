@@ -17,11 +17,12 @@ export function FavProvider({ children }) {
 
     //task stato locale reattivo per la lista dei preferiti
     //* inizializzazione lazy dello stato di React
-    //* (callback con lo useEffect che avremmo fatto al MOUNT del componente, per assicurarci che i dati siano disponibili immediatamente al primo render)
+    //* (callback con lo useEffect che avremmo fatto al MOUNT del componente, 
+    //* per assicurarci che i dati siano disponibili immediatamente al primo render)
     const [favourites, setFavourites] = useState(() => {
         try {
             const stored = localStorage.getItem(FAVOURITES_KEY);
-            return stored ? JSON.parse(stored) : [];
+            return stored ? JSON.parse(stored) : []; //fallback se al render il localStorage risulta vuoto
         } catch (error) {
             console.warn("Errore nel leggere il localStorage:", error);
             return [];

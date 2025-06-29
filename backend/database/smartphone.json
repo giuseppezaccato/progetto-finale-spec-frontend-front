@@ -12,7 +12,7 @@
         "battery": 3274,
         "camera": "48MP + 12MP + 12MP",
         "os": "iOS 17",
-        "image": "http://localhost:3001/images/iphone-15-pro.jpg",
+        "image": "iphone-15-pro.jpg",
         "slug": "iphone-15-pro"
     },
     {
@@ -28,7 +28,7 @@
         "battery": 5000,
         "camera": "200MP + 12MP + 10MP + 10MP",
         "os": "Android 14",
-        "image": "http://localhost:3001/images/galaxy-s24-ultra.jpg",
+        "image": "galaxy-s24-ultra.jpg",
         "slug": "galaxy-s24-ultra"
     },
     {
@@ -44,7 +44,7 @@
         "battery": 4492,
         "camera": "64MP + 13MP",
         "os": "Android 14",
-        "image": "http://localhost:3001/images/pixel-8a.jpg",
+        "image": "pixel-8a.jpg",
         "slug": "pixel-8a"
     },
     {
@@ -60,7 +60,7 @@
         "battery": 5100,
         "camera": "200MP + 8MP + 2MP",
         "os": "Android 13",
-        "image": "http://localhost:3001/images/redmi-note-13-pro.jpg",
+        "image": "redmi-note-13-pro.jpg",
         "slug": "redmi-note-13-pro"
     },
     {
@@ -76,7 +76,7 @@
         "battery": 3349,
         "camera": "48MP + 12MP",
         "os": "iOS 17",
-        "image": "http://localhost:3001/images/iphone-15.jpg",
+        "image": "iphone-15.jpg",
         "slug": "iphone-15"
     },
     {
@@ -92,7 +92,7 @@
         "battery": 4900,
         "camera": "50MP + 12MP + 10MP",
         "os": "Android 14",
-        "image": "http://localhost:3001/images/galaxy-s24-plus.jpg",
+        "image": "galaxy-s24-plus.jpg",
         "slug": "galaxy-s24-plus"
     },
     {
@@ -108,7 +108,7 @@
         "battery": 5050,
         "camera": "50MP + 48MP + 48MP",
         "os": "Android 14",
-        "image": "http://localhost:3001/images/pixel-8-pro.jpg",
+        "image": "pixel-8-pro.jpg",
         "slug": "pixel-8-pro"
     },
     {
@@ -124,7 +124,7 @@
         "battery": 5000,
         "camera": "50MP + 50MP + 50MP + 50MP",
         "os": "Android 14",
-        "image": "http://localhost:3001/images/xiaomi-14-ultra.jpg",
+        "image": "xiaomi-14-ultra.jpg",
         "slug": "xiaomi-14-ultra"
     },
     {
@@ -140,7 +140,7 @@
         "battery": 2018,
         "camera": "12MP",
         "os": "iOS 17",
-        "image": "http://localhost:3001/images/iphone-se-2022.jpg",
+        "image": "iphone-se-2022.jpg",
         "slug": "iphone-se-2022"
     },
     {
@@ -156,7 +156,7 @@
         "battery": 5000,
         "camera": "50MP + 12MP + 5MP",
         "os": "Android 14",
-        "image": "http://localhost:3001/images/galaxy-a55.jpg",
+        "image": "galaxy-a55.jpg",
         "slug": "galaxy-a55-plus"
     },
     {
@@ -172,7 +172,7 @@
         "battery": 4385,
         "camera": "64MP + 13MP",
         "os": "Android 14",
-        "image": "http://localhost:3001/images/pixel-7a.jpg",
+        "image": "pixel-7a.jpg",
         "slug": "pixel-7a"
     },
     {
@@ -188,7 +188,7 @@
         "battery": 5000,
         "camera": "200MP + 8MP + 2MP",
         "os": "Android 13",
-        "image": "http://localhost:3001/images/redmi-note-13-pro-plus.jpg",
+        "image": "redmi-note-13-pro-plus.jpg",
         "slug": "redmi-note-13-pro-plus"
     },
     {
@@ -204,7 +204,7 @@
         "battery": 4323,
         "camera": "48MP + 12MP + 12MP",
         "os": "iOS 17",
-        "image": "http://localhost:3001/images/iphone-14-pro-max.jpg",
+        "image": "iphone-14-pro-max.jpg",
         "slug": "iphone-14-pro-max"
     },
     {
@@ -220,7 +220,7 @@
         "battery": 3700,
         "camera": "50MP + 12MP",
         "os": "Android 14",
-        "image": "http://localhost:3001/images/galaxy-z-flip6.jpg",
+        "image": "galaxy-z-flip6.jpg",
         "slug": "galaxy-z-plus-flip6"
     },
     {
@@ -236,7 +236,7 @@
         "battery": 4575,
         "camera": "50MP + 12MP",
         "os": "Android 14",
-        "image": "http://localhost:3001/images/pixel-8.jpg",
+        "image": "pixel-8.jpg",
         "slug": "pixel-8"
     },
     {
@@ -252,7 +252,7 @@
         "battery": 5000,
         "camera": "50MP + 12MP + 50MP",
         "os": "Android 13",
-        "image": "http://localhost:3001/images/xiaomi-13t-pro.jpg",
+        "image": "xiaomi-13t-pro.jpg",
         "slug": "xiaomi-13t-pro"
     },
     {
@@ -268,7 +268,7 @@
         "battery": 2406,
         "camera": "12MP + 12MP",
         "os": "iOS 17",
-        "image": "http://localhost:3001/images/iphone-13-mini.jpg",
+        "image": "iphone-13-mini.jpg",
         "slug": "iphone-13-mini"
     },
     {
@@ -284,7 +284,7 @@
         "battery": 5000,
         "camera": "50MP + 8MP + 5MP",
         "os": "Android 14",
-        "image": "http://localhost:3001/images/galaxy-a35.jpg",
+        "image": "galaxy-a35.jpg",
         "slug": "galaxy-a35"
     },
     {
@@ -300,7 +300,7 @@
         "battery": 4355,
         "camera": "50MP + 12MP",
         "os": "Android 14",
-        "image": "http://localhost:3001/images/pixel-7.jpg",
+        "image": "pixel-7.jpg",
         "slug": "pixel-7"
     },
     {
@@ -316,7 +316,7 @@
         "battery": 5000,
         "camera": "50MP + 8MP + 2MP",
         "os": "Android 13",
-        "image": "http://localhost:3001/images/redmi-note-12-pro.jpg",
+        "image": "redmi-note-12-pro.jpg",
         "slug": "redmi-note-12-pro"
     },
     {
@@ -332,7 +332,7 @@
         "battery": 3279,
         "camera": "12MP + 12MP",
         "os": "iOS 17",
-        "image": "http://localhost:3001/images/iphone-14.jpg",
+        "image": "iphone-14.jpg",
         "slug": "iphone-14"
     },
     {
@@ -348,7 +348,7 @@
         "battery": 4500,
         "camera": "50MP + 12MP + 8MP",
         "os": "Android 14",
-        "image": "http://localhost:3001/images/galaxy-s23-fe.jpg",
+        "image": "galaxy-s23-fe.jpg",
         "slug": "galaxy-s23-fe"
     },
     {
@@ -364,7 +364,7 @@
         "battery": 4410,
         "camera": "12.2MP + 12MP",
         "os": "Android 14",
-        "image": "http://localhost:3001/images/pixel-6a.jpg",
+        "image": "pixel-6a.jpg",
         "slug": "pixel-6a"
     },
     {
@@ -380,7 +380,7 @@
         "battery": 5000,
         "camera": "64MP + 8MP + 2MP",
         "os": "Android 14",
-        "image": "http://localhost:3001/images/poco-x6-pro.jpg",
+        "image": "poco-x6-pro.jpg",
         "slug": "poco-x6-pro"
     },
     {
@@ -396,7 +396,7 @@
         "battery": 3095,
         "camera": "12MP + 12MP + 12MP",
         "os": "iOS 17",
-        "image": "http://localhost:3001/images/iphone-13-pro.jpg",
+        "image": "iphone-13-pro.jpg",
         "slug": "iphone-13-pro"
     },
     {
@@ -412,7 +412,7 @@
         "battery": 5000,
         "camera": "200MP + 12MP + 10MP + 10MP",
         "os": "Android 14",
-        "image": "http://localhost:3001/images/galaxy-s23-ultra.jpg",
+        "image": "galaxy-s23-ultra.jpg",
         "slug": "galaxy-s23-ultra"
     },
     {
@@ -428,7 +428,7 @@
         "battery": 4680,
         "camera": "12.2MP + 16MP",
         "os": "Android 13",
-        "image": "http://localhost:3001/images/pixel-5a.jpg",
+        "image": "pixel-5a.jpg",
         "slug": "pixel-5a"
     },
     {
@@ -444,7 +444,7 @@
         "battery": 4820,
         "camera": "50MP + 50MP + 50MP",
         "os": "Android 13",
-        "image": "http://localhost:3001/images/xiaomi-13-pro.jpg",
+        "image": "xiaomi-13-pro.jpg",
         "slug": "xiaomi-13-pro"
     },
     {
@@ -460,7 +460,7 @@
         "battery": 2815,
         "camera": "12MP + 12MP + 12MP",
         "os": "iOS 17",
-        "image": "http://localhost:3001/images/iphone-12-pro.jpg",
+        "image": "iphone-12-pro.jpg",
         "slug": "iphone-12-pro"
     },
     {
@@ -476,7 +476,7 @@
         "battery": 5000,
         "camera": "50MP + 5MP + 2MP",
         "os": "Android 14",
-        "image": "http://localhost:3001/images/galaxy-a15.jpg",
+        "image": "galaxy-a15.jpg",
         "slug": "galaxy-a15"
     },
     {
@@ -492,7 +492,7 @@
         "battery": 3140,
         "camera": "12.2MP",
         "os": "Android 13",
-        "image": "http://localhost:3001/images/pixel-4a.jpg",
+        "image": "pixel-4a.jpg",
         "slug": "pixel-4a"
     },
     {
@@ -508,7 +508,7 @@
         "battery": 5000,
         "camera": "50MP + 8MP + 2MP",
         "os": "Android 13",
-        "image": "http://localhost:3001/images/redmi-12.jpg",
+        "image": "redmi-12.jpg",
         "slug": "redmi-12"
     },
     {
@@ -524,7 +524,7 @@
         "battery": 2227,
         "camera": "12MP + 12MP",
         "os": "iOS 17",
-        "image": "http://localhost:3001/images/iphone-12-mini.jpg",
+        "image": "iphone-12-mini.jpg",
         "slug": "iphone-12-mini"
     },
     {
@@ -540,7 +540,7 @@
         "battery": 5000,
         "camera": "108MP + 12MP + 10MP + 10MP",
         "os": "Android 14",
-        "image": "http://localhost:3001/images/galaxy-s22-ultra.jpg",
+        "image": "galaxy-s22-ultra.jpg",
         "slug": "galaxy-s22-ultra"
     },
     {
@@ -556,7 +556,7 @@
         "battery": 3700,
         "camera": "12.2MP",
         "os": "Android 12",
-        "image": "http://localhost:3001/images/pixel-3a-xl.jpg",
+        "image": "pixel-3a-xl.jpg",
         "slug": "pixel-3a-xl"
     },
     {
@@ -572,7 +572,7 @@
         "battery": 5000,
         "camera": "108MP + 8MP + 2MP + 2MP",
         "os": "Android 13",
-        "image": "http://localhost:3001/images/redmi-note-11-pro.jpg",
+        "image": "redmi-note-11-pro.jpg",
         "slug": "redmi-note-11-pro"
     },
     {
@@ -588,7 +588,7 @@
         "battery": 3046,
         "camera": "12MP + 12MP + 12MP",
         "os": "iOS 17",
-        "image": "http://localhost:3001/images/iphone-11-pro.jpg",
+        "image": "iphone-11-pro.jpg",
         "slug": "iphone-11-pro"
     },
     {
@@ -604,7 +604,7 @@
         "battery": 6000,
         "camera": "50MP + 8MP + 2MP",
         "os": "Android 14",
-        "image": "http://localhost:3001/images/galaxy-m34.jpg",
+        "image": "galaxy-m34.jpg",
         "slug": "galaxy-m34"
     },
     {
@@ -620,7 +620,7 @@
         "battery": 3430,
         "camera": "12.2MP",
         "os": "Android 12",
-        "image": "http://localhost:3001/images/pixel-3-xl.jpg",
+        "image": "pixel-3-xl.jpg",
         "slug": "pixel-3-xl"
     },
     {
@@ -636,7 +636,7 @@
         "battery": 5000,
         "camera": "108MP + 8MP + 2MP",
         "os": "Android 13",
-        "image": "http://localhost:3001/images/xiaomi-12t.jpg",
+        "image": "xiaomi-12t.jpg",
         "slug": "xiaomi-12t"
     },
     {
@@ -652,7 +652,7 @@
         "battery": 5000,
         "camera": "50MP + 48MP + 48MP",
         "os": "Android 14",
-        "image": "http://localhost:3001/images/pixel-9-pro.jpg",
+        "image": "pixel-9-pro.jpg",
         "slug": "pixel-9-pro"
     },
     {
@@ -668,7 +668,7 @@
         "battery": 5000,
         "camera": "48MP + 12MP + 12MP",
         "os": "Android 14",
-        "image": "http://localhost:3001/images/xperia-1-vi.jpg",
+        "image": "xperia-1-vi.jpg",
         "slug": "xperia-1-vi"
     },
     {
@@ -684,7 +684,7 @@
         "battery": 6000,
         "camera": "50MP + 13MP + 32MP",
         "os": "Android 14",
-        "image": "http://localhost:3001/images/rog-phone-8-ultimate.jpg",
+        "image": "rog-phone-8-ultimate.jpg",
         "slug": "rog-phone-8-ultimate"
     },
     {
@@ -700,7 +700,7 @@
         "battery": 4500,
         "camera": "50MP + 50MP + 64MP",
         "os": "Android 14",
-        "image": "http://localhost:3001/images/edge-50-ultra.jpg",
+        "image": "edge-50-ultra.jpg",
         "slug": "edge-50-ultra"
     },
     {
@@ -716,7 +716,7 @@
         "battery": 5450,
         "camera": "50MP + 50MP + 180MP",
         "os": "Android 14",
-        "image": "http://localhost:3001/images/magic6-pro.jpg",
+        "image": "magic6-pro.jpg",
         "slug": "magic6-pro"
     },
     {
@@ -732,7 +732,7 @@
         "battery": 5500,
         "camera": "50MP + 8MP + 2MP",
         "os": "Android 14",
-        "image": "http://localhost:3001/images/gt-6-pro.jpg",
+        "image": "gt-6-pro.jpg",
         "slug": "gt-6-pro"
     },
     {
@@ -748,7 +748,7 @@
         "battery": 5400,
         "camera": "50MP + 50MP + 200MP",
         "os": "Android 14",
-        "image": "http://localhost:3001/images/x100-pro+.jpg",
+        "image": "x100-pro+.jpg",
         "slug": "x100-pro+"
     },
     {
@@ -764,7 +764,7 @@
         "battery": 5000,
         "camera": "64MP + 50MP + 50MP",
         "os": "Android 13",
-        "image": "http://localhost:3001/images/axon-50-ultra.jpg",
+        "image": "axon-50-ultra.jpg",
         "slug": "axon-50-ultra"
     },
     {
@@ -780,7 +780,7 @@
         "battery": 5050,
         "camera": "50MP + 13MP + 50MP",
         "os": "Android 14",
-        "image": "http://localhost:3001/images/21-pro.jpg",
+        "image": "21-pro.jpg",
         "slug": "21-pro"
     },
     {
@@ -796,7 +796,23 @@
         "battery": 5000,
         "camera": "47MP + 14MP + 2MP",
         "os": "Android 13",
-        "image": "http://localhost:3001/images/aquos-r8-pro.jpg",
+        "image": "aquos-r8-pro.jpg",
         "slug": "aquos-r8-pro"
+    },
+    {
+        "id": 51,
+        "title": "Poco F7",
+        "category": "Flagship",
+        "brand": "Poco",
+        "price": 449,
+        "display": "6.83' AMOLED 120Hz",
+        "cpu": "Snapdragon 8s Gen 4",
+        "ram": 12,
+        "storage": 512,
+        "battery": 6500,
+        "camera": "50MP + 8MP",
+        "os": "Android 15 HyperOS 2",
+        "image": "poco-f7.jpg",
+        "slug": "poco-f7"
     }
 ]
