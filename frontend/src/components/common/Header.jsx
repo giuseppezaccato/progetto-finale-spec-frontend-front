@@ -39,7 +39,7 @@ export default function Header() {
                                         aria-label="heart"
                                         style={{ color: showOffCanvas ? "#b4c32a" : undefined, transition: "color 0.2s" }}
                                     >
-                                        ❤️
+                                        📱
                                     </span>
                                     <span className=" fs-5">Preferiti</span>
                                 </span>

@@ -6,6 +6,7 @@ import {
 // import { debounce } from "lodash"; //fix => customHook
 import { useSmartphoneSearch } from "../hooks/useSmartphoneSearch";
 import FavButton from "../components/ui/FavButton";
+import { Link } from "react-router-dom";
 
 const URL = import.meta.env.VITE_BASE_URL;
 
@@ -137,7 +138,8 @@ export default function Compara() {
                                                     alt={phone.title}
                                                     style={{ maxHeight: "80px" }}
                                                     className="m-3" />
-                                                <p>{phone.title}</p>
+                                                <Link to={`/smartphone/${phone.id}`}>{phone.title}</Link>
+                                                <FavButton smartphone={phone} />
                                                 <button
                                                     onClick={() => removeFromCompare(phone.id)}
                                                     className="btn btn-sm btn-danger ms-4"
@@ -145,7 +147,6 @@ export default function Compara() {
                                                 >
                                                     &times;
                                                 </button>
-                                                <FavButton smartphone={phone} />
                                             </div>
                                         </th>
                                     ))}
