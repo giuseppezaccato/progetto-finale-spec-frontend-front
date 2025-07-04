@@ -115,10 +115,26 @@ L’interfaccia è completamente responsive, con breakpoints e media query per a
 
 ---
 
-## Tecnologie Utilizzate
-- **Backend**: Node.js, Express, JWT, database relazionale o NoSQL
-- **Frontend**: React, Fetch, gestione stato 
+## 🛠️ Tecnologie Utilizzate
+**🔧 Backend**
+ - Node.js + Express per la gestione del server e delle rotte RESTful
+ - TypeScript per la tipizzazione delle risorse
+ - JWT per eventuale autenticazione (se prevista)
+ - Persistenza dati tramite file JSON (file system based)
+ - Validazione automatica tramite schema generato da types.ts
+ - Gestione CORS per compatibilità con richieste frontend
+ - Morgan per il logging delle richieste HTTP
+ - Gestione asincrona di I/O e scrittura dati
+ - Architettura modulare e auto-generazione dinamica delle risorse CRUD
 
+**💻 Frontend**
+ - React 19 per la costruzione dell’interfaccia utente
+ - React Router DOM v7 per la gestione delle rotte client-side in SPA
+ - Bootstrap 5.3 per lo styling responsive e layout mobile-first
+ - Swiper.js per la creazione di caroselli e componenti interattivi
+ - Lodash per utility avanzate (in particolare debounce, throttle, ecc.)
+ - Fetch API per le chiamate asincrone al backend
+ - Gestione dello stato con React e hook personalizzati (useState, useEffect, useMemo, useCallback)
 ---
 
 ## Personalizzazione e Configurazione
