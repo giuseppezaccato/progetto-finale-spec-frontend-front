@@ -22,7 +22,7 @@ export default function FavButton({ smartphone }) {
     return (
         <button
             onClick={handleClick}
-            className="btn rounded btn-outline-info p-2 mx-2"
+            className="btn rounded btn-outline-info  "
             disabled={!smartphone?.id}
         >
             {isFav ? "★Rimuovi dai Preferiti" : "☆Aggiungi ai Preferiti"}

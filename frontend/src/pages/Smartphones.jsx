@@ -147,22 +147,20 @@ export default function Smartphones() {
 
     return (
         <>
-            <div className="list-group list-group-flush row col-4 mx-auto">
+            <div className="list-group list-group-flush mx-auto col-12 col-md-8 col-lg-6 px-2">
 
                 <input
                     type="text"
-                    className="input align-self-center "
+                    className="form-control my-3"
                     placeholder="Cerca Smartphone"
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                     onKeyDown={handleKeyDown}
                     list="smartphones-list"
-                    style={{ maxWidth: "300px" }}
+                    style={{ maxWidth: "100%" }}
                 />
 
-                {/*//task nuovo componente usato anche nel projectwork per il suggest degli smartphone */}
                 <datalist id="smartphones-list">
-                    {/* {filteredProducts.map(s => (//fix => customHook */}
                     {filteredResults.map(s => (
                         <option key={s.id} value={s.title}>
                             {s.title} ({s.category})
@@ -170,8 +168,8 @@ export default function Smartphones() {
                     ))}
                 </datalist>
 
-                <div className="d-flex justify-content-center my-3 flex-wrap">
-                    <div className="btn-group" role="group">
+                <div className="d-flex justify-content-center my-2 flex-wrap gap-2">
+                    <div className="btn-group w-100 w-md-auto" role="group">
                         <button
                             type="button"
                             className={`btn btn-outline-info ${sortBy === 'title' ? 'active' : ''}`}
@@ -188,19 +186,15 @@ export default function Smartphones() {
                         </button>
                     </div>
                 </div>
-                {/*//task basta cambiare l'array di riferimento se vuoi cambiare la visualizzazione
-                 products => TUTTI "indistintamente" //fix => ora nel GlobalContext (allSmartphones)
-                 filteredProducts => QUELLI FILTRATI IN BASE ALLA QUERY*/}
-                {/* // {filteredProducts.map(product => (//fix => customHook */}
-                {/* {filteredResults.map(product => ( //fix => implementazione dell'ordinamento sortBy/sortOrder */}
+
                 {organizedResults.map(product => (
                     <div
                         key={product.id}
-                        className="list-group-item list-group-item-action w-100"
+                        className="list-group-item list-group-item-action w-100 px-2 py-3"
                     >
                         <div className="row align-items-center">
                             {/* Colonna: Titolo + Link */}
-                            <div className="col-12 col-md-8">
+                            <div className="col-12 col-md-8 mb-2 mb-md-0">
                                 <Link to={`/smartphone/${product.id}`} className="text-decoration-none">
                                     <h5 className="mb-1">{product.title}</h5>
                                 </Link>
@@ -208,14 +202,13 @@ export default function Smartphones() {
                             </div>
 
                             {/* Colonna: Bottone preferiti, sempre allineato a destra */}
-                            <div className="col-12 col-md-4 text-md-end mt-2 mt-md-0">
+                            <div className="col-12 col-md-4 text-end mt-2 mt-md-0">
                                 <FavButton smartphone={product} />
                             </div>
                         </div>
                     </div>
                 ))}
             </div>
-
         </>
     )
 }

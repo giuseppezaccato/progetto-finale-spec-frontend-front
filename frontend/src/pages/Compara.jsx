@@ -1,4 +1,6 @@
 import {
+    useRef,
+    useEffect,
     // useEffect,//fix => customHook
     // useMemo,//fix => customHook
     useState,
@@ -16,6 +18,7 @@ export default function Compara() {
     // const [debouncedQuery, setDebouncedQuery] = useState(""); //fix => customHook
     const [compareList, setCompareList] = useState([]);
     const { query, setQuery, filteredResults } = useSmartphoneSearch()
+    const inputRef = useRef()
 
     const caratteristiche = [
         "brand", "price", "display", "cpu", "ram", "storage", "battery", "camera", "os"
@@ -47,6 +50,7 @@ export default function Compara() {
     // }, [debouncedQuery, allSmartphones]);
 
     const addToCompare = async (smartphoneBase) => {
+
         if (compareList.find(p => p.id === smartphoneBase.id))
             return;
         if (compareList.length >= 4) {
@@ -73,108 +77,129 @@ export default function Compara() {
         setCompareList(prev => prev.filter(p => p.id !== id));
     };
 
+    //reset ricerca
+    const resetQuery = () => {
+        inputRef.current.value = ""
+        setQuery("")
+    }
+
+    // Al montaggio del componente, imposta il focus sull'input di ricerca
+    useEffect(() => {
+        inputRef.current.focus()
+    }, [])
+
     return (
         <>
-
-            <div className="d-flex justify-content-center align-items-center text-center ">
-                <span className="h4 fw-bold mb-0">Smartphone Battle</span>
+            <div className="d-flex flex-column flex-md-row justify-content-center align-items-center text-center mb-3">
+                <span className="h4 fw-bold mb-0 my-2 mb-md-0">Smartphone Battle</span>
                 <img
                     src="/battle.jpeg"
                     alt="logo"
-                    className="me-3 "
-                    style={{ width: "200px" }}
+                    className="mx-auto mx-md-3"
+                    style={{ width: "120px", maxWidth: "40vw" }}
                 />
             </div>
 
-
-            <div className=" row col-7 mx-auto">
-                <div className="d-flex justify-content-center mb-4">
-                    <div className="position-relative w-100" style={{ maxWidth: "500px" }}>
-
-                        <input
-                            type="text"
-                            value={query}
-                            onChange={(e) => setQuery(e.target.value)}
-                            placeholder="Cerca Smartphone..."
-                            className="input form-control"
-                        />
-
-                        {/* {filteredOptions.length > 0 && ( //fix => customHook*/}
-                        {query.trim() !== "" && filteredResults.length > 0 && (
-                            <ul
-                                className="list-group position-absolute top-100 start-0 w-100 z-3 overflow-auto"
-                                style={{ maxHeight: "240px" }}
-                            >
-                                {/* {filteredOptions.map(phone => ( //fix =>  customHook */}
-                                {filteredResults.map(phone => (
-                                    <li
-                                        key={phone.id}
-                                        onClick={() => addToCompare(phone)}
-                                        className="list-group-item list-group-item-action"
-                                        style={{ cursor: "pointer" }}
-                                    >
-                                        {phone.title}
-                                    </li>
-                                ))}
-                            </ul>
-                        )}
-                    </div>
-                </div>
-
-
-
-
-
-                {compareList.length > 0 ? (
-                    <div className="table-responsive mb-5">
-                        <table className="table table-bordered align-middle">
-                            <thead className="table-light">
-                                <tr>
-                                    <th>Caratteristica</th>
-                                    {compareList.map(phone => (
-                                        <th key={phone.id} className="position-relative">
-                                            <div className="d-flex justify-content-around align-items-center">
-                                                <img src={`${URL}/images/${phone.image}`}
-                                                    alt={phone.title}
-                                                    style={{ maxHeight: "80px" }}
-                                                    className="m-3" />
-                                                <Link to={`/smartphone/${phone.id}`}>{phone.title}</Link>
-                                                <FavButton smartphone={phone} />
-                                                <button
-                                                    onClick={() => removeFromCompare(phone.id)}
-                                                    className="btn btn-sm btn-danger ms-4"
-                                                    title="Rimuovi"
-                                                >
-                                                    &times;
-                                                </button>
-                                            </div>
-                                        </th>
+            <div className="row justify-content-center w-100 mx-0">
+                <div className="col-12 col-md-8 col-lg-7 px-1">
+                    <div className="d-flex justify-content-center mb-4">
+                        <div className="position-relative w-100" style={{ maxWidth: "500px" }}>
+                            <input
+                                ref={inputRef}
+                                type="text"
+                                value={query}
+                                onChange={(e) => setQuery(e.target.value)}
+                                placeholder="Cerca Smartphone..."
+                                className="form-control"
+                            />
+                            {query && (
+                                <button
+                                    type="button"
+                                    onClick={() => {
+                                        inputRef.current.value = ""
+                                        setQuery("")
+                                    }}
+                                    className="btn btn-sm btn-outline-secondary position-absolute end-0 top-50 translate-middle-y me-2"
+                                    style={{ zIndex: 4 }}
+                                    aria-label="Resetta ricerca"
+                                    tabIndex={0}
+                                >
+                                    &times;
+                                </button>
+                            )}
+                            {query.trim() !== "" && filteredResults.length > 0 && (
+                                <ul
+                                    className="list-group position-absolute top-100 start-0 w-100 z-3 overflow-auto"
+                                    style={{ maxHeight: "240px" }}
+                                >
+                                    {filteredResults.map(phone => (
+                                        <li
+                                            key={phone.id}
+                                            onClick={() => addToCompare(phone)}
+                                            className="list-group-item list-group-item-action"
+                                            style={{ cursor: "pointer" }}
+                                        >
+                                            {phone.title}
+                                        </li>
                                     ))}
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {caratteristiche.map(key => (
-                                    <tr key={key}>
-                                        <td className="fw-semibold text-capitalize">{key}</td>
+                                </ul>
+                            )}
+                        </div>
+                    </div>
+
+                    {compareList.length > 0 ? (
+                        <div className="table-responsive mb-5">
+                            <table className="table table-bordered align-middle mb-0">
+                                <thead className="table-light">
+                                    <tr>
+                                        <th className="align-middle text-center" style={{ minWidth: 100 }}>Caratteristica</th>
                                         {compareList.map(phone => (
-                                            <td key={phone.id + key}>
-                                                {key === "price" && phone[key] !== undefined
-                                                    ? `${phone[key]} €`
-                                                    : (key === "ram" || key === "storage") && phone[key] !== undefined
-                                                        ? `${phone[key]} GB`
-                                                        : key === "battery" && phone[key] !== undefined
-                                                            ? `${phone[key]} mAh`
-                                                            : phone[key]}
-                                            </td>
+                                            <th key={phone.id} className="position-relative align-middle text-center" style={{ minWidth: 140 }}>
+                                                <div className="d-flex flex-column flex-md-row justify-content-center align-items-center gap-2">
+                                                    <img src={`/images/${phone.image}`}
+                                                        alt={phone.title}
+                                                        style={{ maxHeight: "60px", width: "auto" }}
+                                                        className="m-1" />
+                                                    <div className="d-flex flex-column align-items-center">
+                                                        <Link to={`/smartphone/${phone.id}`} className="small">{phone.title}</Link>
+                                                        <FavButton smartphone={phone} />
+                                                    </div>
+                                                    <button
+                                                        onClick={() => removeFromCompare(phone.id)}
+                                                        className="btn btn-sm btn-danger ms-md-2 mt-2 mt-md-0"
+                                                        title="Rimuovi"
+                                                    >
+                                                        &times;
+                                                    </button>
+                                                </div>
+                                            </th>
                                         ))}
                                     </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </div>
-                ) : (
-                    <p className="text-secondary text-center">Aggiungi smartphone per iniziare la comparazione.</p>
-                )}
+                                </thead>
+                                <tbody>
+                                    {caratteristiche.map(key => (
+                                        <tr key={key}>
+                                            <td className="fw-semibold text-capitalize text-center">{key}</td>
+                                            {compareList.map(phone => (
+                                                <td key={phone.id + key} className="text-center">
+                                                    {key === "price" && phone[key] !== undefined
+                                                        ? `${phone[key]} €`
+                                                        : (key === "ram" || key === "storage") && phone[key] !== undefined
+                                                            ? `${phone[key]} GB`
+                                                            : key === "battery" && phone[key] !== undefined
+                                                                ? `${phone[key]} mAh`
+                                                                : phone[key]}
+                                                </td>
+                                            ))}
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    ) : (
+                        <p className="text-secondary text-center">Aggiungi smartphone per iniziare la comparazione.</p>
+                    )}
+                </div>
             </div>
         </>
     );

@@ -25,8 +25,6 @@ app.use(cors({
 }));
 app.use(express.json({ limit: 'Infinity' }));
 
-//! middleware img_path
-app.use('/images', express.static(path.join(__dirname, 'public', 'images')));
 
 // **CACHE in memoria** for each resource type
 const cache = {};

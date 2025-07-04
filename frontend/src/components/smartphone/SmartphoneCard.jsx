@@ -3,8 +3,6 @@ import FavButton from '../ui/FavButton';
 import Loader from '../common/Loader';
 import HomeButton from '../ui/HomeButton';
 
-const URL = import.meta.env.VITE_BASE_URL
-
 
 const SmartphoneCard = React.memo(({ smartphone }) => {
 
@@ -13,38 +11,47 @@ const SmartphoneCard = React.memo(({ smartphone }) => {
     if (!smartphone) return <Loader />;
 
     return (
-        <div className=" p-4 text-center">
-            {/* Immagine */}
-            <img
-                src={`${URL}/images/${phone.image}`}
-                alt={phone.title}
-                className="w-60 h-60 object-contain rounded-md mb-4 flex-shrink-0"
-            />
+        <div className="container my-5">
+            <div className="row align-items-center">
+                {/* Immagine a sinistra */}
+                <div className="col-md-4 text-center mb-3 mb-md-0">
+                    <img
+                        src={`/images/${phone.image}`}
+                        alt={phone.title}
+                        className="img-fluid rounded shadow-sm"
+                        style={{ maxHeight: "300px", objectFit: "contain" }}
+                    />
+                </div>
 
-            {/* Titolo */}
-            <h3 className="text-xl font-bold text-gray-800 mb-3">{phone.title}</h3>
-            <HomeButton />
+                {/* Dettagli a destra */}
+                <div className="col-md-8">
+                    <div className="d-flex justify-content-between align-items-start">
+                        <h3 className="fw-bold">{phone.title}</h3>
+                        <HomeButton />
+                    </div>
 
-            {/* Caratteristiche tecniche */}
-            <div className="text-gray-600 text-sm w-full text-center">
-                <p className="mb-1"><strong className="text-gray-700">Brand:</strong> {phone.brand}</p>
-                <p className="mb-1"><strong className="text-gray-700">Categoria:</strong> {phone.category}</p>
-                <p className="mb-1"><strong className="text-gray-700">Display:</strong> {phone.display}</p>
-                <p className="mb-1"><strong className="text-gray-700">CPU:</strong> {phone.cpu}</p>
-                <p className="mb-1"><strong className="text-gray-700">RAM:</strong> {phone.ram} GB</p>
-                <p className="mb-1"><strong className="text-gray-700">Storage:</strong> {phone.storage} GB</p>
-                <p className="mb-1"><strong className="text-gray-700">Batteria:</strong> {phone.battery} mAh</p>
-                <p className="mb-1"><strong className="text-gray-700">Fotocamera:</strong> {phone.camera}</p>
-                <p className="mb-1"><strong className="text-gray-700">OS:</strong> {phone.os}</p>
+                    <hr />
+
+                    <ul className="list-unstyled text-muted mb-3">
+                        <li><strong>Brand:</strong> {phone.brand}</li>
+                        <li><strong>Categoria:</strong> {phone.category}</li>
+                        <li><strong>Display:</strong> {phone.display}</li>
+                        <li><strong>CPU:</strong> {phone.cpu}</li>
+                        <li><strong>RAM:</strong> {phone.ram} GB</li>
+                        <li><strong>Storage:</strong> {phone.storage} GB</li>
+                        <li><strong>Batteria:</strong> {phone.battery} mAh</li>
+                        <li><strong>Fotocamera:</strong> {phone.camera}</li>
+                        <li><strong>OS:</strong> {phone.os}</li>
+                    </ul>
+
+                    <div className="d-flex justify-content-around align-items-center">
+                        <FavButton smartphone={phone} />
+                        <span className="fs-4 fw-bold text-primary">{phone.price} €</span>
+                    </div>
+                </div>
             </div>
-
-            {/* Prezzo */}
-            <div className="mt-3 w-full">
-                <span className="text-2xl font-bold text-blue-600"><strong>{phone.price} €</strong></span>
-                <FavButton smartphone={phone} />
-            </div>
-
         </div>
+
     );
 });
 
