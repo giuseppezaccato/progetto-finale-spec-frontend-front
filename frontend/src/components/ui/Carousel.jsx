@@ -1,25 +1,38 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import { Link } from 'react-router-dom';
 import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import { Autoplay, EffectCoverflow } from 'swiper/modules';
+import { Link } from 'react-router-dom';
 
 const CarouselSwiper = React.memo(({ images }) => {
+
     return (
-        <div className="container-fluid py-4 d-flex justify-content-center align-items-center">
+        <div className="container-fluid py-4 d-flex justify-content-center align-items-start">
             <div className="w-100" style={{ maxWidth: '800px' }}>
                 <Swiper
-                    modules={[Autoplay]}
+                    modules={[Autoplay, EffectCoverflow]}
                     loop={true}
                     autoplay={{
                         delay: 2000,
                         disableOnInteraction: false,
                     }}
-                    slidesPerView={1}
+                    effect={'coverflow'}
+                    centeredSlides={true}
+                    coverflowEffect={{
+                        rotate: 50,
+                        stretch: 0,
+                        depth: 100,
+                        modifier: 1,
+                        slideShadows: false,
+                    }}
+                    grabCursor={true}
+                    slidesPerView={'3'}
+                    // slidesPerView={1}
                     breakpoints={{
-                        576: { slidesPerView: 2, spaceBetween: 10 },
-                        768: { slidesPerView: 3, spaceBetween: 10 },
-                        992: { slidesPerView: 4, spaceBetween: 10 },
+                        576: { slidesPerView: 4, spaceBetween: 10 },
+                        768: { slidesPerView: 5, spaceBetween: 10 },
+                        992: { slidesPerView: 6, spaceBetween: 10 },
                     }}
                     spaceBetween={10}
                 >
@@ -32,12 +45,12 @@ const CarouselSwiper = React.memo(({ images }) => {
                                 <img
                                     src={image}
                                     alt={`Smartphone ${id}`}
-                                    className="img-fluid "
+                                    className="img-fluid"
                                     style={{
                                         width: '100%',
                                         maxHeight: '300px',
                                         objectFit: 'contain',
-                                        cursor: 'grab',
+                                        cursor: 'grab'
                                     }}
                                 />
                             </Link>
