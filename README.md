@@ -64,6 +64,50 @@ Il frontend sarà disponibile su `http://localhost:5173`.
 3. **Database**: Il backend comunica con il database per leggere dati.
 4. **Risposta**: Il backend invia la risposta al frontend, che aggiorna l’interfaccia utente di conseguenza.
 
+## Panoramica dell'Applicazione
+
+L'applicazione è un catalogo di smartphone costruito in React che implementa diverse funzionalità avanzate con particolare attenzione alle performance. Il progetto utilizza una architettura modulare basata su custom hooks, context API e componenti ottimizzati per garantire un'esperienza utente fluida e reattiva.
+
+```mermaid
+graph TD
+  A[App.jsx] --> B[GlobalProvider]
+  A --> C[FavProvider]
+  B --> D[Smartphones.jsx]
+  C --> E[Header.jsx]
+  C --> F[FavButton.jsx]
+  E --> G[OffCanvas.jsx]
+```
+## Struttura del Progetto
+
+```
+src/
+├── App.jsx                 # Entry point principale, orchestrazione context e routing
+├── pages/
+│   ├── Homepage.jsx          # Landing page con carousel
+│   ├── Smartphones.jsx       # Lista filtrata e ordinata
+│   ├── Smartphone.jsx        # Dettaglio singolo prodotto
+│   ├── Compara.jsx          # Comparazione multipla
+│   └── NotFound.jsx         # Pagina errore 404
+├── layouts/
+│   └── DefaultLayout.jsx    # Layout principale con header/footer
+├── hooks/
+│   └── useSmartphoneSearch.js # Custom hook per ricerca con debounce
+├── context/
+│   ├── GlobalContext.jsx    # Stato globale per dati condivisi
+│   └── FavContext.jsx       # Gestione preferiti con localStorage e state showOffCanvas
+├── components/
+│   ├── common/
+│   │   ├── Header.jsx       # Navbar ottimizzata, gestione preferiti
+│   │   ├── Footer.jsx       # Footer minimale e performante
+│   │   └── Loader.jsx       # Loader animato, rendering condizionale
+│   ├── ui/
+│   │   ├── Carousel.jsx     # Swiper carousel ottimizzato
+│   │   ├── FavButton.jsx    # Bottone preferiti reattivo
+│   │   └── OffCanvas.jsx    # Sidebar scorrevole
+│   └── smartphone/
+│       └── SmartphoneCard.jsx # Card dettaglio prodotto
+```
+
 ---
 
 ## Dettagli Frontend
