@@ -77,11 +77,6 @@ export default function Compara() {
         setCompareList(prev => prev.filter(p => p.id !== id));
     };
 
-    //reset ricerca
-    const resetQuery = () => {
-        inputRef.current.value = ""
-        setQuery("")
-    }
 
     // Al montaggio del componente, imposta il focus sull'input di ricerca
     useEffect(() => {

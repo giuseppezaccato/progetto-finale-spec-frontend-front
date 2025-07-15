@@ -21,8 +21,8 @@ export function FavProvider({ children }) {
     //* per assicurarci che i dati siano disponibili immediatamente al primo render)
     const [favourites, setFavourites] = useState(() => {
         try {
-            const stored = localStorage.getItem(FAVOURITES_KEY);
-            return stored ? JSON.parse(stored) : []; //fallback se al render il localStorage risulta vuoto
+            const prevFavourite = localStorage.getItem(FAVOURITES_KEY);
+            return prevFavourite ? JSON.parse(prevFavourite) : []; //fallback se al render il localStorage risulta vuoto
         } catch (error) {
             console.warn("Errore nel leggere il localStorage:", error);
             return [];
@@ -66,11 +66,18 @@ export function FavProvider({ children }) {
         setFavourites(prev => prev.filter(item => item.id !== id));
     };
 
+    //task Rimuovere TUTTI i preferiti
+    const resetFavourites = () => {
+        localStorage.removeItem(FAVOURITES_KEY);
+        setFavourites([]);
+    }
+
     //task Valore fornito dal contesto: lista dei preferiti e funzioni di gestione
     const value = {
         favourites,
         addFavourite,
         removeFavourite,
+        resetFavourites,
         showOffCanvas,
         setShowOffCanvas
     };

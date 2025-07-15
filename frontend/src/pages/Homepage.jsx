@@ -8,7 +8,8 @@ const Homepage = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const fetchSmartphones = async () => {
+        //* IIFE
+        (async () => {
             try {
 
                 //* situazione precedente... 
@@ -25,24 +26,27 @@ const Homepage = () => {
                 // Estraggo gli ID
                 const ids = data.map(s => s.id);
 
-                //  fetch multiple in parallelo per ogni dettaglio salvando solo quello che mi serve
+                // fetch multiple in parallelo per ogni dettaglio salvando solo quello che mi serve
                 // (l'immagine principalmente e il titolo)
                 const detailedResponses = await Promise.all(
                     ids.map(id =>
                         fetch(`${URL}/smartphones/${id}`)
                             .then(res => res.json())
-                            .then(data => ({ id: data.smartphone.id, image: `/images/${data.smartphone.image}`, title: data.smartphone.title }))
+                            .then(data => ({
+                                id: data.smartphone.id,
+                                image: `/images/${data.smartphone.image}`,
+                                title: data.smartphone.title
+                            }))
                     )
                 );
+
                 setImages(detailedResponses);
             } catch (error) {
                 console.error('Errore nel fetch:', error);
             } finally {
                 setLoading(false);
             }
-        };
-
-        fetchSmartphones();
+        })();
     }, []);
 
     if (loading) return <Loader />;

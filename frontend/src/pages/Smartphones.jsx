@@ -4,7 +4,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSmartphoneSearch } from "../hooks/useSmartphoneSearch";
 import { useState, useMemo } from "react";
 import FavButton from "../components/ui/FavButton";
-// import FavButton from "../components/ui/FavButton";
 
 //* funzione di supporto (oppure importa lodash)
 // function standardDebounce(callback, delay) {
@@ -22,7 +21,7 @@ import FavButton from "../components/ui/FavButton";
 export default function Smartphones() {
 
     //task inizializzazione stati reeattivi per query di ricerca e prodotti
-    // const [products, setProducts] = useState([]) //fix => customHook
+    // const [products, setProducts] = useState([]) //fix => GlobalContext
     // const [query, setQuery] = useState("") //fix => customHook
     const { query, setQuery, filteredResults } = useSmartphoneSearch()
     const navigate = useNavigate()
@@ -133,7 +132,7 @@ export default function Smartphones() {
 
                 return matchup * sortOrder;
             });
-    }, [filteredResults, query, sortBy, sortOrder]);
+    }, [filteredResults, sortBy, sortOrder]);
 
     const sortingFunctionBy = (field) => {
         if (sortBy === field) {
@@ -157,11 +156,11 @@ export default function Smartphones() {
                     onChange={(e) => setQuery(e.target.value)}
                     onKeyDown={handleKeyDown}
                     list="smartphones-list"
-                    style={{ maxWidth: "100%" }}
+                    style={{ maxWidth: "80%" }}
                 />
 
                 <datalist id="smartphones-list">
-                    {filteredResults.map(s => (
+                    {organizedResults.map(s => (
                         <option key={s.id} value={s.title}>
                             {s.title} ({s.category})
                         </option>

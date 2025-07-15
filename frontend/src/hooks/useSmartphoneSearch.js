@@ -4,7 +4,7 @@ import { useGlobal } from "../context/GlobalContext"; //task import global
 
 export function useSmartphoneSearch(delay = 400) {
     const { allSmartphones } = useGlobal(); //task importo dal global il fetchAll
-    const [query, setQuery] = useState(""); //task stato query da filtrare e  debouncare sotto
+    const [query, setQuery] = useState(""); //task stato query da filtrare e debouncare sotto
     const [debouncedQuery, setDebouncedQuery] = useState("");
 
     //task  uso useMemo per memorizzare la funzione lodash.debounce, aggiornata solo se cambia delay
@@ -13,7 +13,7 @@ export function useSmartphoneSearch(delay = 400) {
     //task  aggiorno debouncedQuery solo dopo il delay, e cancello il debounce alla dismiss
     useEffect(() => {
         debouncedSetQuery(query);
-        return () => debouncedSetQuery.cancel(); //task ricorda .cancel fa il cleanUp
+        return () => debouncedSetQuery.cancel(); //task ricorda .cancel() fa il cleanUp
     }, [query, debouncedSetQuery]);
 
     //task  filtro gli smartphone in base alla query debouncata
@@ -22,7 +22,7 @@ export function useSmartphoneSearch(delay = 400) {
         const lower = debouncedQuery.toLowerCase();
         return allSmartphones.filter(s =>
             s.title.toLowerCase().includes(lower) ||
-            (s.category?.toLowerCase().includes(lower) || "")
+            (s.category.toLowerCase().includes(lower) || "")
         );
     }, [debouncedQuery, allSmartphones]);
 
