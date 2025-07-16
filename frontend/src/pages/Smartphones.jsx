@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 // import { useEffect, useMemo, useState } from "react"; //fix => customHook
 // import { debounce } from 'lodash' //fix => customHook
 import { useSmartphoneSearch } from "../hooks/useSmartphoneSearch";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef } from "react";
 import FavButton from "../components/ui/FavButton";
 
 //* funzione di supporto (oppure importa lodash)
@@ -25,6 +25,7 @@ export default function Smartphones() {
     // const [query, setQuery] = useState("") //fix => customHook
     const { query, setQuery, filteredResults } = useSmartphoneSearch()
     const navigate = useNavigate()
+    const inputRef = useRef(null)
 
     //task aggiungo stati per ordinamento
     const [sortBy, setSortBy] = useState("title")
@@ -106,7 +107,7 @@ export default function Smartphones() {
     //task al press di enter reindirizzo l'utente alla pagina dettagli di selectedSmartphone
     const handleKeyDown = (e) => {
         if (e.key === "Enter") {
-            const selectedSmartphone = filteredResults.find(p => p.title === query);
+            const selectedSmartphone = filteredResults.find(p => p.title.toLowerCase() === query.toLowerCase());
             if (selectedSmartphone) {
                 navigate(`/smartphone/${selectedSmartphone.id}`);
             }
@@ -148,24 +149,43 @@ export default function Smartphones() {
         <>
             <div className="list-group list-group-flush mx-auto col-12 col-md-8 col-lg-6 px-2">
 
-                <input
-                    type="text"
-                    className="form-control my-3"
-                    placeholder="Cerca Smartphone"
-                    value={query}
-                    onChange={(e) => setQuery(e.target.value)}
-                    onKeyDown={handleKeyDown}
-                    list="smartphones-list"
-                    style={{ maxWidth: "80%" }}
-                />
+                <div className="d-flex justify-content-center mb-4">
+                    <div className="position-relative w-100" style={{ maxWidth: "500px" }}>
+                        <input
+                            ref={inputRef}
+                            type="text"
+                            value={query}
+                            onChange={(e) => setQuery(e.target.value)}
+                            placeholder="Cerca Smartphone"
+                            className="form-control my-3"
+                            onKeyDown={handleKeyDown}
+                            list="smartphones-list"
+                        />
 
-                <datalist id="smartphones-list">
-                    {organizedResults.map(s => (
-                        <option key={s.id} value={s.title}>
-                            {s.title} ({s.category})
-                        </option>
-                    ))}
-                </datalist>
+                        {query && (
+                            <button
+                                type="button"
+                                onClick={() => {
+                                    inputRef.current.value = ""
+                                    setQuery("")
+                                }}
+                                className="btn btn-sm btn-outline-warning position-absolute end-0 top-50 translate-middle-y me-2"
+                                style={{ zIndex: 4 }}
+                                aria-label="Resetta ricerca"
+                                tabIndex={0}
+                            >
+                                &times;
+                            </button>
+                        )}
+                        <datalist id="smartphones-list">
+                            {organizedResults.map((s) => (
+                                <option key={s.id} value={s.title}>
+                                    {s.title} ({s.category})
+                                </option>
+                            ))}
+                        </datalist>
+                    </div>
+                </div>
 
                 <div className="d-flex justify-content-center my-2 flex-wrap gap-2">
                     <div className="btn-group w-100 w-md-auto" role="group">
